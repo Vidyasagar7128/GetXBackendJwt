@@ -61,10 +61,8 @@ module.exports = {
         const token = user.getSignedJwtToken()
         res.status(200).json({success: true,token})
     },
-    //exports.user ={
-        loginMe:async (req,res,next)=>{
-            req.user = await User.findById(req.user.id)
-            res.status(200).json({success:true,data:req.user})
-        }
-   // }
+    loginMe:async (req,res,next)=>{
+        req.user = await User.findById(req.user.id)
+        res.status(200).json({success:true,data:req.user})
+    }
 }
