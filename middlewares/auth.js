@@ -15,11 +15,12 @@ exports.protect = {
             const decoded =jwt.verify(token,'gaikwadvidyasagarraosaheb')
             console.log(decoded);
             req.user = await User.findById(decoded.id)
-            res.status(200).json({success: true,data:req.user})
+            //res.status(200).json({success: true,data:req.user})
             next()
         }catch(err){
             return next(new ErrorResponce('Not Authorized User',401))
         }
-    },
+    }
 }
+
 
